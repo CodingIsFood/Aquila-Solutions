@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./index.css">
+    <script type="text/javascript" src="js/typed.js"></script>
+  </head>
+
+  <body>
+   <div class="container">
+
+     <div class="navbar">
+       <ul class="navbar-ul">
+         <li><a href="#home">Home</a></li>
+         <li><a href="#news">Join Us</a></li>
+         <li><a href="#contact">Contact Us</a></li>
+         <li><a href="#about">About Us</a></li>
+       </ul>
+     </div>
+
+     <div class="image-gallery">
+       <div class="slideshow-container">
+         <div class="myslides fade">
+           <div class="numbers">
+             1 / 4
+           </div>
+           <div>
+             <img src="img/1280X800_05.jpg">
+           </div>
+           <div class="caption">
+             Text 1
+           </div>
+         </div>
+         <div class="myslides fade">
+           <div class="numbers">
+             2 / 4
+           </div>
+           <div>
+             <img src="img/1280X800_02.jpg">
+           </div>
+           <div class="caption">
+             Text 2
+           </div>
+         </div>
+         <div class="myslides fade">
+           <div class="numbers">
+             3 / 4
+           </div>
+           <div>
+             <img src="img/1280X800_01.jpg">
+           </div>
+           <div class="caption">
+             Text 3
+           </div>
+         </div>
+         <div class="myslides fade">
+           <div class="numbers">
+             4 / 4
+           </div>
+           <div>
+             <img src="img/1280X800_03.jpg">
+           </div>
+           <div class="caption">
+             Text 4
+           </div>
+         </div>
+         <a class="prev" onclick="plusSlides(-1)">
+           &#10094;
+         </a>
+         <a class="next" onclick="plusSlides(1)">
+           &#10095;
+         </a>
+       </div>
+
+       <br>
+
+       <div style="text-align:center">
+         <span class="dots" onclick="currentSlide(1)"></span>
+         <span class="dots" onclick="currentSlide(2)"></span>
+         <span class="dots" onclick="currentSlide(3)"></span>
+         <span class="dots" onclick="currentSlide(4)"></span>
+       </div>
+
+     </div>
+
+     <div class="aquila-solutions-image-container">
+       <div class="aquila-solutions-prefix">
+         <h1>Aquila Solutions on &nbsp</h1>
+       </div>
+       <div class="aquila-solutions">
+       </div>
+     </div>
+
+    </div>
+
+  <script type="text/javascript">
+    var slideIndex = 1;
+    //showSlide(slideIndex);
+
+    function plusSlides(n){
+    showSlide(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+    showSlide(slideIndex = n);
+    }
+
+    function showSlide(n){
+    var i;
+    var slides = document.getElementsByClassName("myslides");
+    var dots = document.getElementsByClassName("dots");
+    if (n > slides.length) { slideIndex = 1};
+    if (n < 1) { slideIndex = slides.length};
+    for (i=0;i<slides.length;i++) {
+    slides[i].style.display = "none";
+    };
+
+    for (i=0;i<dots.length;i++) {
+    dots[i].className = dots[i].className.replace(" active","");
+    };
+
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+
+  autoSlide();
+  function autoSlide() {
+    var i;
+    var slides = document.getElementsByClassName("myslides");
+    var dots = document.getElementsByClassName("dots");
+
+    for (i=0;i<slides.length;i++) {
+    slides[i].style.display = "none";
+    };
+
+    for (i=0;i<dots.length;i++) {
+      dots[i].className = dots[i].className.replace(" active","");
+
+      if (slideIndex>dots.length){
+        slideIndex=1;
+      }
+    };
+    dots[slideIndex-1].className += " active";
+    slides[slideIndex-1].style.display = "block";
+    slideIndex++;
+    setTimeout(autoSlide,2000)
+  }
+  </script>
+
+
+  <script type="text/javascript">
+  var typed=new Typed(".aquila-solutions", {
+    strings: [
+    " Wikipedia",
+    " Wikidata",
+    " Commons",
+    " Wikipedia"
+    ],
+    // smartBackspace: true,
+    typeSpeed: 50,
+    backSpeed: 50,
+    loop: true
+    //showCursor: false
+  });
+</script>
+
+  </body>
+</html>
